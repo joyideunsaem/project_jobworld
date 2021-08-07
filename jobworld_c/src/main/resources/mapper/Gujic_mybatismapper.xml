@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- <mapper namespace="mapper.mybatismapper"> -->
+<mapper namespace="com.sboot.kaja.dao.GujicDAO">
+
+<select id="getAllInfo" resultType="com.sboot.kaja.vo.GujicVO">
+	SELECT * FROM GujicTable order by name
+</select>
+
+<select id="getInfo" resultType="com.sboot.kaja.vo.GujicVO">
+	SELECT * FROM GujicTable where id = #{id}
+</select>
+
+<update id="updateInfo">
+	UPDATE GujicTable 
+		SET name = #{name}, address = #{address}, tel = #{tel}, email = #{email}, age = #{age},
+		gender = #{gender}, intro = #{intro},
+		edu = #{edu}, cert = #{cert}, major = #{major}, career = #{career}
+	WHERE id = #{id}
+</update>
+
+<insert id="insertInfo">
+	INSERT INTO GujicTable VALUES (#{name} , #{tel})
+</insert>
+
+<delete id="deleteInfo">
+	DELETE FROM GujicTable WHERE name = #{name}
+</delete>
+
+</mapper>
