@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- <mapper namespace="mapper.mybatismapper"> -->
+<mapper namespace="com.sboot.kaja.dao.SawonDAO">
+
+
+<update id="updateInfo">
+	UPDATE teltable222 SET tel = #{tel} WHERE name = #{name}
+</update>
+
+<insert id="insertInfo">
+	INSERT INTO teltable222 VALUES (#{name} , #{tel})
+</insert>
+
+<delete id="deleteInfo">
+	DELETE FROM teltable222 WHERE name = #{name}
+</delete>
+
+</mapper>
